@@ -37,17 +37,25 @@ A modern web application built with Swift Vapor framework.
 - Swift 5.9 or later
 - Xcode (for macOS development)
 - **OR** Docker & Docker Compose (for containerized deployment)
+- **OR** GitHub Codespaces (for cloud development)
 
 ### Installation
 
-#### Option 1: Local Development
+#### Option 1: GitHub Codespaces (Recommended for Quick Start)
+1. Click the "Code" button in your GitHub repository
+2. Select "Codespaces" tab
+3. Click "Create codespace on main"
+4. Wait for the environment to set up automatically
+5. The app will be built and ready to run!
+
+#### Option 2: Local Development
 1. Clone the repository
 2. Build and run:
    ```bash
    swift run
    ```
 
-#### Option 2: Docker (Recommended)
+#### Option 3: Docker (Containerized)
 1. Clone the repository
 2. Build and run with Docker Compose:
    ```bash
@@ -65,6 +73,15 @@ The SQLite database file will be created automatically when you first run the ap
 - `DELETE /todos/:id` - Delete a todo
 
 ### Development
+
+#### GitHub Codespaces
+The easiest way to develop:
+1. Open in GitHub Codespaces (everything is pre-configured)
+2. Run the app:
+   ```bash
+   swift run
+   ```
+3. Visit the forwarded port 8080 in your browser
 
 #### Local Development
 Run in development mode:
@@ -92,6 +109,32 @@ docker-compose logs -f vapor-app
 Run tests:
 ```bash
 swift test
+```
+
+## GitHub Codespaces
+
+This project is fully configured for GitHub Codespaces with:
+
+- **Pre-built environment**: Swift 5.9, SQLite, and all dependencies
+- **VS Code extensions**: Swift language support, Docker tools, GitHub Copilot
+- **Automatic setup**: Dependencies resolved and project built on startup  
+- **Port forwarding**: Access your app directly from the browser
+- **Development tools**: Git, Docker-in-Docker, and debugging support
+
+### Codespace Features:
+- ✅ **Zero setup time** - Everything configured automatically
+- ✅ **Consistent environment** - Same setup for all developers
+- ✅ **Cloud-based** - Develop from anywhere with just a browser
+- ✅ **Pre-installed extensions** - Swift, Docker, Copilot ready to go
+- ✅ **Automatic port forwarding** - Test your app instantly
+
+### Quick Start in Codespaces:
+```bash
+# App is already built, just run:
+swift run
+
+# Access at the forwarded port 8080
+# Visit /todos to see the todo list
 ```
 
 ## Configuration

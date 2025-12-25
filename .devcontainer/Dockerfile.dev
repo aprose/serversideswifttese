@@ -1,0 +1,44 @@
+# Development Dockerfile for Codespaces
+FROM swift:5.9-jammy
+
+# Install OS updates and development tools
+RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
+    && apt-get -q update \
+    && apt-get -q dist-upgrade -y \
+    && apt-get install -y \
+        sqlite3 \
+        libsqlite3-dev \
+        curl \
+        wget \
+        git \
+        vim \
+        nano \
+        htop \
+        tree \
+        jq \
+        unzip \
+        build-essential \
+        pkg-config \
+        libssl-dev \
+        zlib1g-dev \
+        sudo \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create vscode user
+RUN groupadd --gid 1000 vscode \
+    && useradd --uid 1000 --gid vscode --shell /bin/bash --create-home vscode \
+    && echo "vscode ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+# Set up workspace
+WORKDIR /workspace
+RUN chown vscode:vscode /workspace
+
+# Switch to vscode user
+USER vscode
+
+# Install Swift tools and set up environment
+RUN echo 'export PATH=/usr/bin:$PATH' >> ~/.bashrc \
+    && echo 'export PATH=/usr/bin:$PATH' >> ~/.zshrc
+
+# Default command
+CMD ["sleep", "infinity"]

@@ -1,0 +1,10 @@
+{
+  "gitHubCodespaces": {
+    "prebuilds": {
+      "main": {
+        "enabled": true,
+        "prebuildCommand": "swift package resolve && swift build"
+      }
+    }
+  }
+}
