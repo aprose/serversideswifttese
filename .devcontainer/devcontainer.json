@@ -1,6 +1,9 @@
 {
   "name": "Swift Vapor Development",
-  "image": "mcr.microsoft.com/devcontainers/swift:1-5.9-jammy",
+  "build": {
+    "dockerfile": "Dockerfile.dev",
+    "context": ".."
+  },
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {
       "version": "latest",
