@@ -1,0 +1,24 @@
+#extend("base"):
+  #export("content"):
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <h1 class="display-4 text-center mb-4">Welcome to Vapor!</h1>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Your Vapor app is running!</h5>
+            <p class="card-text">This is a basic Vapor application with the following features:</p>
+            <ul>
+              <li>Swift Package Manager configuration</li>
+              <li>Database integration with SQLite</li>
+              <li>Leaf templating engine</li>
+              <li>RESTful API endpoints</li>
+              <li>Model-View-Controller architecture</li>
+            </ul>
+            <a href="/todos" class="btn btn-primary">View Todo List</a>
+            <a href="/api/todos" class="btn btn-outline-secondary ms-2">API Docs</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  #endexport
+#endextend

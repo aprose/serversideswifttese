@@ -1,0 +1,42 @@
+# Build artifacts
+.build/
+.swiftpm/
+*.xcodeproj/
+*.xcworkspace/
+
+# Dependencies
+Package.resolved
+
+# Environment files
+.env
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+README.md
+*.md
+
+# Database files (will be handled by volume mount)
+db.sqlite
+*.db
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# IDE files
+.vscode/
+.idea/
+
+# Docker
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# Testing
+.coverage/
+TestResults/

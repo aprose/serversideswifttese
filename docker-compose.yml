@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  vapor-app:
+    build: .
+    container_name: vapor-serverside-swift
+    ports:
+      - "8080:8080"
+    environment:
+      - LOG_LEVEL=info
+    volumes:
+      # Mount a volume for the SQLite database to persist data
+      - vapor_data:/app/data
+    working_dir: /app
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/hello"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  vapor_data:
+    driver: local
