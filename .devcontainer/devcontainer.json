@@ -1,23 +1,7 @@
 {
   "name": "Swift Vapor Development",
-  "build": {
-    "dockerfile": "Dockerfile.dev",
-    "context": "."
-  },
+  "image": "mcr.microsoft.com/devcontainers/swift:1-5.9-jammy",
   "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {
-      "installZsh": true,
-      "configureZshAsDefaultShell": true,
-      "installOhMyZsh": true,
-      "upgradePackages": true,
-      "username": "vscode",
-      "userUid": "automatic",
-      "userGid": "automatic"
-    },
-    "ghcr.io/devcontainers/features/git:1": {
-      "ppa": true,
-      "version": "latest"
-    },
     "ghcr.io/devcontainers/features/docker-in-docker:2": {
       "version": "latest",
       "enableNonRootDocker": "true"
